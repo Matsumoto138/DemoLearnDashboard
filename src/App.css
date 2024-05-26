@@ -1,38 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --backgroundColor: #f4f4f4;
+  --primaryWhite: #fafbfd;
+  --fontColor: #2f3742;
+  --secondaryBlue: #293fac;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
+  background-color: var(--backgroundColor);
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  font-family: "Roboto", sans-serif;
+}
+
+/* SIDEBAR */
+
+.Sidebar {
+  background: var(--primaryWhite);
+}
+
+.Sidebar-Container .Logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  border-right:1px solid var(--backgroundColor) ;
+}
+
+.Sidebar-Container .Menu {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.Sidebar-Container .Menu ul {
+  list-style: none;
+}
+
+.Sidebar-Container .Menu ul li {
+  padding: 10px 5px;
+}
+
+/***** HEADER ******/
+
+.App-header{
+  width: 100%;
+  height: 70px;
+  background-color: var(--primaryWhite);
+  padding: 5px 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/***** SCREEN ******/
+
+.Screen-Body-Component{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 3rem;
+  gap: 10px;
+}
+
+.Left-Body{
+  width: 50%;
+}
+
+/* Screen Headline */
+
+.Screen-Headline{
+  width: 100%;
+  height: 100px;
+  background-color: var(--primaryWhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  border-radius: 10px;
+}
+
+.Screen-Headline .Stats{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+
+.Screen-Headline .Stats .Stats-Text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.Screen-Headline .Stats .Stats-Text h6{
+  opacity: 0.4;
+}
+
+.Screen-Headline .Stats .Stats-Image{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.Screen-Headline .Stats-Image img{
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Top Emploee */
+
+.Top-Employees{
+  width: 100%;
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.Top-Employees h2{
+  margin: 10px;
+}
+
+.Top-Employees .Top-Employee-Card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  background-color: var(--backgroundColor);
+  padding: 10px 1rem;
+  border-radius: 10px;
+}
+
+.Top-Employees .Top-Employee-Card .Name{
+  display: flex;
+  align-items: center;
+}
+
+.Top-Employees .Top-Employee-Card .Name p{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.Top-Employees .Top-Employee-Card .Email p{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Teams Component */
+
+.Teams-Component{
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.Teams-Component .Team-Description{
+  font-size: 12px;
+  opacity: 0.4;
+  text-overflow: ellipsis;
+  height: 30px;
+}
+
+.Teams-Employee-Card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  
+  padding: 10px 1rem;
+  border-radius: 10px;
+}
+
+.Teams-Employee-Card .Name{
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.Teams-Employee-Card p{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.Teams-Card{
+  margin: 1rem 0;
+}
+
+.Teams-Buttons button{
+  background-color: var(--primaryWhite);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--fontColor);
+  border-radius: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+
+.Teams-Buttons button:hover{
+  background-color: var(--fontColor);
+  color: var(--primaryWhite);
+}
+
+/* Top Skills */
+
+.Top-Skills{
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.Activity-Hours{
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.In-Progress{
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.Upcoming{
+  background-color: var(--primaryWhite);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width:490px){
+  .Screen{
+    width: 100%;
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .Screen-Body-Component{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .Left-Body, .Right-Body{
+    width: 100%;
+  }
+
+  .Sidebar {
+    display: none;
   }
 }
