@@ -67,6 +67,17 @@ body,
   justify-content: space-between;
 }
 
+.mobile-menu-button{
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.MuiDrawer-paperAnchorLeft{
+  width: 300px;
+}
+
 /***** SCREEN ******/
 
 .Screen-Body-Component{
@@ -258,6 +269,13 @@ body,
 }
 
 @media (max-width:490px){
+
+  .App {
+    display: grid;
+    grid-template-columns:1fr;
+    font-family: "Roboto", sans-serif;
+  }
+
   .Screen{
     width: 100%;
     margin: 0 auto;
@@ -276,5 +294,9 @@ body,
 
   .Sidebar {
     display: none;
+  }
+
+  .mobile-menu-button{
+    display: block;
   }
 }
